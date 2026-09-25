@@ -4,6 +4,7 @@
   "main": "src/infra/http/server.ts",
   "scripts": {
     "dev": "tsx watch --env-file=.env .",
+    "build": "tsup",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
@@ -29,6 +30,7 @@
     "@types/pg": "^8.23.1",
     "@types/qs": "^6.15.1",
     "drizzle-kit": "1.0.0-rc.4",
+    "tsup": "^8.5.1",
     "tsx": "^4.23.13",
     "typescript": "~6.0.3"
   }
