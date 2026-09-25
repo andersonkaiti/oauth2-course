@@ -7,6 +7,8 @@ export function errorHandler(
   _request: FastifyRequest,
   reply: FastifyReply,
 ) {
+  console.error(error)
+
   if (error instanceof ZodError) {
     return reply.status(401).send({
       error: z.treeifyError(error),

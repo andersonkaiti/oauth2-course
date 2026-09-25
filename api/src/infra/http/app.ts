@@ -11,6 +11,7 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from 'fastify-type-provider-zod'
+import { errorHandler } from './error-handler.ts'
 
 export const app = Fastify({
   logger: {
@@ -52,5 +53,7 @@ app.register(cors, {
 
 app.register(authGoogleRoute)
 app.register(meRoute)
+
+app.setErrorHandler(errorHandler)
 
 app.get('/', (_request, reply) => reply.send({ message: 'OAuth2 API Flow' }))
